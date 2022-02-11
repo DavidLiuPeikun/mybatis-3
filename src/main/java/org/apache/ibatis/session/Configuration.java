@@ -193,6 +193,7 @@ public class Configuration {
   }
 
   public Configuration() {
+    // 内置别名注册
     typeAliasRegistry.registerAlias("JDBC", JdbcTransactionFactory.class);
     typeAliasRegistry.registerAlias("MANAGED", ManagedTransactionFactory.class);
 
