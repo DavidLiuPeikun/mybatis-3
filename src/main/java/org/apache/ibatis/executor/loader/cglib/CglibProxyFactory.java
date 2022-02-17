@@ -46,6 +46,7 @@ public class CglibProxyFactory implements ProxyFactory {
 
   private static final String FINALIZE_METHOD = "finalize";
   private static final String WRITE_REPLACE_METHOD = "writeReplace";
+  private String aa = "test";
 
   public CglibProxyFactory() {
     try {
