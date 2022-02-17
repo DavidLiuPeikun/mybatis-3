@@ -713,6 +713,7 @@ public class Configuration {
     if (cacheEnabled) {
       executor = new CachingExecutor(executor);
     }
+    //跟执行器绑定拦截器插件（这里也是使用代理来实现）
     executor = (Executor) interceptorChain.pluginAll(executor);
     return executor;
   }
