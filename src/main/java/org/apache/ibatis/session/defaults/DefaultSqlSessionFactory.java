@@ -117,6 +117,7 @@ public class DefaultSqlSessionFactory implements SqlSessionFactory {
       final TransactionFactory transactionFactory = getTransactionFactoryFromEnvironment(environment);
       final Transaction tx = transactionFactory.newTransaction(connection);
       final Executor executor = configuration.newExecutor(tx, execType);
+      //DefaultSqlSession实现了SqlSession接口，里面有各种各样的SQL执行方法，主要用于SQL操作的对外接口，它会调用执行器来执行实际的SQL语句
       return new DefaultSqlSession(configuration, executor, autoCommit);
     } catch (Exception e) {
       throw ExceptionFactory.wrapException("Error opening session.  Cause: " + e, e);
